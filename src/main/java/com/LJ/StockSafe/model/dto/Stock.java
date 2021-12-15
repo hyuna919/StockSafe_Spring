@@ -5,7 +5,7 @@ public class Stock {
 	String stock_name;
 	String stock_market;
 	String stock_sector;
-	String stock_wics;
+	String stock_wics; 
 	
 	public Stock(String id, String stock_name, String stock_market, String stock_sector, String stock_wics) {
 		super();
