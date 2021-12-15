@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class ReplyDto {
-	int id;
-	String stockId;
-	String replyContent;
-	String userinfoId;
-	String replyRegdate;
-	int replyLevel;
-	int replyParent;
+	private int id;
+	private String stockId;
+	private String replyContent;
+	private String userinfoId;
+	private String replyRegdate;
+	private int replyLevel;
+	private int replyParent;
 }

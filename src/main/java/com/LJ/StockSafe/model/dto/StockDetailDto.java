@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class StockDetailDto {
-	String stock_id;
-	long stockdetail_marketcap;
-	long stockdetail_count;
-	float stockdetail_foreigner;
-	float stockdetail_per;
-	float stockdetail_pbr;
-	float stockdetail_bps;
-	float stockdetail_divyield;
+	private String stock_id;
+	private long stockdetail_marketcap;
+	private long stockdetail_count;
+	private float stockdetail_foreigner;
+	private float stockdetail_per;
+	private float stockdetail_pbr;
+	private float stockdetail_bps;
+	private float stockdetail_divyield;
 }

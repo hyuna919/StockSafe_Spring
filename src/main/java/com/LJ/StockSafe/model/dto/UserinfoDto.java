@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class UserinfoDto {
-	String id;
-	String userinfo_pw;
-	String userinfo_name ;
-	String userinfo_regdate;
+	private String id;
+	private String userinfo_pw;
+	private String userinfo_name ;
+	private String userinfo_regdate;
 	
 }
