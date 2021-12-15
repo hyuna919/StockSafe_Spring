@@ -1,5 +1,3 @@
-create database stocksafe_db;
-
 use stocksafe_db;
 
 create table userinfo(
@@ -11,50 +9,32 @@ create table userinfo(
 );
 
 create table stock(
-    id varchar(10),
+	id varchar(10),
     stock_name varchar(40) not null,
     stock_market varchar(10) not null,
+    stock_sector varchar(20),
+    stock_wics varchar(20),
+    stock_marketcap long,
+    stock_count long,
+    stock_foreigner float,
+    stock_per float,
+    stock_pbr  float,
+    stock_bps float,
+    stock_divyield float,
     primary key(id)
-);
-
-create table theme(
-    id int auto_increment,
-    theme_name varchar(30),
-    primary key(id)
-);
-
-create table stockTheme(
-    id int primary key auto_increment,
-    stock_id varchar(10),
-    theme_id int,
-    foreign key(stock_id) references stock(id),
-    foreign key(theme_id) references theme(id)
 );
 
 create table userinfoStock(
-    userinfo_id varchar(20),
+	userinfo_id varchar(20),
     stock_id varchar(10),
-    foreign key(userinfo_id) references userinfo(id),
+	foreign key(userinfo_id) references userinfo(id),
     foreign key(stock_id) references stock(id)
 );
 
 create table likeStock(
-    userinfo_id varchar(20),
+	userinfo_id varchar(20),
     stock_id varchar(10),
     foreign key(userinfo_id) references userinfo(id),
-    foreign key(stock_id) references stock(id)
-);
-
-create table stockdetail(
-    stock_id varchar(10),
-    stockdetail_marketcap long,
-    stockdetail_count long,
-    stockdetail_foreigner float,
-    stockdetail_per float,
-    stockdetail_pbr  float,
-    stockdetail_bps float,
-    stockdetail_divyield float,
-    primary key(stock_id),
     foreign key(stock_id) references stock(id)
 );
 
