@@ -3,7 +3,7 @@ package com.LJ.StockSafe.model.dto;
 import lombok.Data;
 
 @Data
-public class Reply {
+public class ReplyDto {
 	int id;
 	String stockId;
 	String replyContent;
