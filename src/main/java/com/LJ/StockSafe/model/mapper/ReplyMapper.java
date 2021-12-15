@@ -6,9 +6,9 @@ import com.LJ.StockSafe.model.dto.ReplyDto;
 
 public interface ReplyMapper {
 
-	int createReply(String stockId, String replyContent, String userinfoId, String replyRegdate, int replyLevel, int replyParent);
-	List<ReplyDto> readAllReply();
-	int updateReply(int id, String userinfoId);
+	int createReply(ReplyDto reply);
+	List<ReplyDto> readAllReply(int stockId);
+	int updateReply(int id, String userinfoId, String replyContent);
 	int deleteReply(int id, String userinfoId);
 	
 	

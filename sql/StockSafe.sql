@@ -5,6 +5,8 @@ create table userinfo(
     userinfo_pw varchar(30) not null,
     userinfo_name varchar(20) not null,
     userinfo_regdate datetime default now(),
+    userinfo_email_id varchar(30) not null,
+    userinfo_email_domain varchar(30) not null,
     primary key(id)
 );
 
