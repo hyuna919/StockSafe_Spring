@@ -10,5 +10,4 @@ public interface UserinfoMapper {
 	UserinfoDto readUser(String id); 
 	int updateUser(String id);
 	int deleteUser(String id);
-
 }
