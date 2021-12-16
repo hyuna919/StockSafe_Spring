@@ -11,6 +11,6 @@ public interface StockMapper {
 	int createStock(StockDto stock);
 	List<StockDto> readStockAll(String keyword);
 	StockDto readStockDetail(String id);
-	int updateStock(String id, StockDto stock);
+	int updateStock(StockDto stock);
 	int deleteStock(String id);
 }
