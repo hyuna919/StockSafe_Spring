@@ -17,7 +17,7 @@
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.MemberMapper">
 	
-	<select id="readUserAll" parameterType="map" resultType="MemberDto">
+	<select id="readUserAll" parameterType="String" resultType="MemberDto">
 		select *
 		from member		
 		<if test="key == 'id'">

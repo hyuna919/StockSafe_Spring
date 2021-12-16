@@ -27,6 +27,7 @@ public class MemberController {
 	private MemberService memberService;
 
 //	List<UserinfoDto> readUserAll(String key, String word); 
+	
 	@GetMapping
 	public ResponseEntity<List<MemberDto>> readUserAll(String key, String word){
 		return new ResponseEntity<List<MemberDto>>(memberService.readUserAll(key, word), HttpStatus.OK);
