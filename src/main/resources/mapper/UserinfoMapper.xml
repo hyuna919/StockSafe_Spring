@@ -22,13 +22,13 @@
 		select *
 		if
 		from userinfo
-		<if test="key == 'id'">
+		<if test="#{key} == 'id'">
 				where id like concat('%', #{word}, '%')
 		</if>
-		<if test="key == 'userinfo_name'">
+		<if test="#{key} == 'userinfo_name'">
 				where userinfo_name like concat('%', #{word}, '%')
 		</if>
-		<if test="key == 'userinfo_email_domain'">
+		<if test="#{key} == 'userinfo_email_domain'">
 				where userinfo_email_domain like concat('%', #{word}, '%')
 		</if>
 		
