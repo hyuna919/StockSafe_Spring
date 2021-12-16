@@ -14,8 +14,8 @@
 <mapper namespace="com.LJ.StockSafe.model.mapper.UserinfoMapper">
 	
 	<insert id="createUser" parameterType="UserinfoDto">
-		insert into userinfo(id, userinfo_pw, userinfo_name, user_email_id, user_email_domain, userinfo_regdate)
-		VALUES( #{id}, #{userinfo_pw}, #{userinfo_name}, #{user_email_id}, #{user_email_domain}, now()));
+		insert into userinfo(id, userinfo_pw, userinfo_name, userinfo_email_id, userinfo_email_domain, userinfo_regdate)
+		VALUES( #{id}, #{userinfo_pw}, #{userinfo_name}, #{userinfo_email_id}, #{userinfo_email_domain}, now()));
 	</insert>
 	
 	<select id="readUserAll" parameterType="String" resultType="UserinfoDto">
