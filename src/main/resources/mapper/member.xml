@@ -19,10 +19,8 @@
 	
 	<select id="readUserAll" parameterType="String" resultType="MemberDto">
 		select *
-		from member		
-		<if test="key == 'id'">
-				where id like concat('%', #{word}, '%')
-		</if>
+		from member
+		where id=#{key}
 	</select>
 	
 </mapper>
