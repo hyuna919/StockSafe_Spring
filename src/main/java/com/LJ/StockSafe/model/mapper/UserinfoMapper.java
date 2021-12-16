@@ -10,7 +10,8 @@ import com.LJ.StockSafe.model.dto.UserinfoDto;
 public interface UserinfoMapper {
 	int createUser(UserinfoDto userinfodto);
 	List<UserinfoDto> readUserAll(String key, String word); 
-	UserinfoDto readUser(String id); 
+	UserinfoDto readUser(String id);
+	String loginUser(String id, String userinfo_pw);
 	int updateUser(String id);
 	int deleteUser(String id);
 }
