@@ -9,8 +9,8 @@ import com.LJ.StockSafe.model.dto.UserStockDto;
 @Mapper
 public interface LikeStockMapper {
 
-	int createLikeStock( String userinfoId, String stockId);
+	int createLikeStock(UserStockDto userstock);
 	List<UserStockDto> readLikeStock(String userinfoId);
-	int deleteLikeStock( String userinfoId, String stockId );
+	int deleteLikeStock(int id);
 	
 }
