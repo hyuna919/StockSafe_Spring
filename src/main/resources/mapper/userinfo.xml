@@ -19,17 +19,8 @@
 	
 	<select id="readUserAll" parameterType="String" resultType="UserinfoDto">
 		select *
-		if
 		from userinfo
-		<if test="#{key} == 'id'">
-				where id like concat('%', #{word}, '%')
-		</if>
-		<if test="#{key} == 'userinfo_name'">
-				where userinfo_name like concat('%', #{word}, '%')
-		</if>
-		<if test="#{key} == 'userinfo_email_domain'">
-				where userinfo_email_domain like concat('%', #{word}, '%')
-		</if>
+		
 	</select>
 	
 	<select id="readUser" parameterType="String" resultType="UserinfoDto">
