@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.LJ.StockSafe.model.dto.MemberDto;
 import com.LJ.StockSafe.model.dto.UserinfoDto;
+import com.LJ.StockSafe.model.service.MemberService;
 import com.LJ.StockSafe.model.service.UserinfoService;
 
 import io.swagger.annotations.Api;
@@ -25,11 +27,13 @@ public class UserinfoController {
 	
 	@Autowired
 	private UserinfoService userinfoService;
+	@Autowired
+	private MemberService memberService;
 
 //	List<UserinfoDto> readUserAll(String key, String word); 
 	@GetMapping
-	public ResponseEntity<List<UserinfoDto>> readUserAll(String key, String word){
-		return new ResponseEntity<List<UserinfoDto>>(userinfoService.readUserAll(key, word), HttpStatus.OK);
+	public ResponseEntity<List<MemberDto>> readUserAll(String key, String word){
+		return new ResponseEntity<List<MemberDto>>(memberService.readUserAll(key, word), HttpStatus.OK);
 	}
 
 }

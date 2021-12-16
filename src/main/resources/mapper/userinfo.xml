@@ -19,8 +19,7 @@
 	
 	<select id="readUserAll" parameterType="String" resultType="UserinfoDto">
 		select *
-		from userinfo
-		
+		from userinfo		
 	</select>
 	
 	<select id="readUser" parameterType="String" resultType="UserinfoDto">
