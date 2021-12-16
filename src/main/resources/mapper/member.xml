@@ -20,7 +20,15 @@
 	<select id="readUserAll" parameterType="map" resultType="MemberDto">
 		select *
 		from member
-		where id=#{key}
+		<if test="key == 'id'">
+				where id like concat('%', #{word}, '%')
+		</if>
+		<if test="key == 'member_name'">
+				where member_name like concat('%', #{word}, '%')
+		</if>
+		<if test="key == 'member_email_domain'">
+				where member_email_domain like concat('%', #{word}, '%')
+		</if>
 	</select>
 	
 </mapper>
