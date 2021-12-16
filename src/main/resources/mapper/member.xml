@@ -8,13 +8,21 @@
 	int loginUser(String id, String userinfo_pw);
 	int updateUser(String id);
 	int deleteUser(String id);
+	
+	
+		<if test="key == 'id'">
+				where id like concat('%', #{word}, '%')
+		</if>
  -->
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.MemberMapper">
 	
-	<select id="readUserAll" parameterType="String" resultType="MemberDto">
+	<select id="readUserAll" parameterType="map" resultType="MemberDto">
 		select *
 		from member		
+		<if test="key == 'id'">
+				where id like concat('%', #{word}, '%')
+		</if>
 	</select>
 	
 </mapper>
