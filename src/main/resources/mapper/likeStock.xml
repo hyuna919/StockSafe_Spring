@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.LJ.StockSafe.model.mapper.LikeStockMapper">
+
+	<select id="readLikeStock" parameterType="string" resultType="UserStockDto" >
+		select *
+		from likeStock
+		where userinfo_id = #{userinfoId}
+	</select>
+	
+	<insert id="createLikeStock" parameterType="UserStockDto">
+		insert into
+		likeStock(userinfo_id, stock_id)
+		values(#{userinfoId}, #{stockId})
+	</insert>
+	
+	<delete id="deleteLikeStock" parameterType="int">
+		delete
+		from likeStock
+		where id=#{id};
+	</delete>
+
+</mapper>
