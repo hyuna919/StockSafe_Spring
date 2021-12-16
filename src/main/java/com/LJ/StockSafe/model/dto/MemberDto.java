@@ -8,29 +8,27 @@ import lombok.Data;
 //@AllArgsConstructor
 //@Data
 public class MemberDto implements Serializable{
-	private String memberId;
+	private String id;
 	private String memberPw;
 	private String memberName;
 	private String memberEmailId;
 	private String memberEmailDomain;
 	private String memberRegdate;
-	
-	
-	public MemberDto(String memberId, String memberPw, String memberName, String memberEmailId,
-			String memberEmailDomain, String memberRegdate) {
+	public MemberDto(String id, String memberPw, String memberName, String memberEmailId, String memberEmailDomain,
+			String memberRegdate) {
 		super();
-		this.memberId = memberId;
+		this.id = id;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
 		this.memberEmailId = memberEmailId;
 		this.memberEmailDomain = memberEmailDomain;
 		this.memberRegdate = memberRegdate;
 	}
-	public String getMemberId() {
-		return memberId;
+	public String getId() {
+		return id;
 	}
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getMemberPw() {
 		return memberPw;
@@ -62,6 +60,8 @@ public class MemberDto implements Serializable{
 	public void setMemberRegdate(String memberRegdate) {
 		this.memberRegdate = memberRegdate;
 	}
+	
+	
 	
 	
 	
