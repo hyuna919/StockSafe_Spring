@@ -27,15 +27,19 @@ create table stock(
 );
 
 create table userinfoStock(
+    id int auto_increment,
 	userinfo_id varchar(20),
     stock_id varchar(10),
+    primary key(id),
 	foreign key(userinfo_id) references userinfo(id),
     foreign key(stock_id) references stock(id)
 );
 
 create table likeStock(
+    id int auto_increment,
 	userinfo_id varchar(20),
     stock_id varchar(10),
+    primary key(id),
     foreign key(userinfo_id) references userinfo(id),
     foreign key(stock_id) references stock(id)
 );
