@@ -18,15 +18,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
 
 @RestController
-@RequestMapping("/userinfo")
-@Api("Userinfo Controller")
-public class UserinfoController {
+@RequestMapping("/member")
+@Api("Member Controller")
+public class MemberController {
 //	private final Logger
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
 	
-	@Autowired
-	private UserinfoService userinfoService;
 	@Autowired
 	private MemberService memberService;
 
