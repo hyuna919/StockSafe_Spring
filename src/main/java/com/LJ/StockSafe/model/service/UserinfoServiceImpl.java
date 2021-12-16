@@ -28,6 +28,11 @@ public class UserinfoServiceImpl implements UserinfoService{
 	public UserinfoDto readUser(String id) {
 		return userinfoMapper.readUser(id);
 	}
+	
+	@Override
+	public String loginUser(String id, String userinfo_pw){
+		return userinfoMapper.loginUser(id, userinfo_pw);
+	}
 
 	@Override
 	public boolean updateUser(String id) {

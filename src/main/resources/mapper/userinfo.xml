@@ -2,14 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <!--  int createUser(UserinfoDto userinfodto);
 	List<UserinfoDto> readUserAll(String key, String word); 
 	UserinfoDto readUser(String id); 
+	int loginUser(String id, String userinfo_pw);
 	int updateUser(String id);
 	int deleteUser(String id);
  -->
-
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.UserinfoMapper">
 	
@@ -31,13 +30,18 @@
 		<if test="#{key} == 'userinfo_email_domain'">
 				where userinfo_email_domain like concat('%', #{word}, '%')
 		</if>
-		
 	</select>
 	
 	<select id="readUser" parameterType="String" resultType="UserinfoDto">
 		select *
 		from userinfo
 		where id = #{id}
+	</select>
+	
+	<select id="loginUser" parameterType="String" resultType="String">
+		select userinfo_name
+		from userinfo
+		where id = #{id} and userinfo_pw = #{userinfo_pw}
 	</select>
 	
 	<update id="updateUser" parameterType="UserStockDto">
