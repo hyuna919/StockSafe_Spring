@@ -1,13 +1,16 @@
+drop database stocksafe_db;
+create database stocksafe_db;
+
 use stocksafe_db;
 
-create table userinfo(
-    id varchar(20),
-    userinfo_pw varchar(30) not null,
-    userinfo_name varchar(20) not null,
-    userinfo_regdate datetime default now(),
-    userinfo_email_id varchar(30) not null,
-    userinfo_email_domain varchar(30) not null,
-    primary key(id)
+create table member(
+    member_id varchar(20),
+    member_pw varchar(30) not null,
+    member_name varchar(20) not null,
+    member_regdate datetime default now(),
+    member_email_id varchar(30) not null,
+    member_email_domain varchar(30) not null,
+    primary key(member_id)
 );
 
 create table stock(
@@ -26,21 +29,21 @@ create table stock(
     primary key(id)
 );
 
-create table userinfoStock(
+create table memberStock(
     id int auto_increment,
-	userinfo_id varchar(20),
+	member_id varchar(20),
     stock_id varchar(10),
     primary key(id),
-	foreign key(userinfo_id) references userinfo(id),
+	foreign key(member_id) references member(member_id),
     foreign key(stock_id) references stock(id)
 );
 
 create table likeStock(
     id int auto_increment,
-	userinfo_id varchar(20),
+	member_id varchar(20),
     stock_id varchar(10),
     primary key(id),
-    foreign key(userinfo_id) references userinfo(id),
+    foreign key(member_id) references member(member_id),
     foreign key(stock_id) references stock(id)
 );
 
@@ -48,7 +51,7 @@ create table reply(
     id int auto_increment,
     stock_id varchar(10),
     reply_content varchar(200) not null,
-    userinfo_id varchar(20) not null,
+    member_id varchar(20) not null,
     reply_regdate datetime default now(),
     reply_level int not null,
     reply_parent int not null,
