@@ -7,8 +7,8 @@ public class UserinfoDto {
 	private String id;
 	private String userinfoPw;
 	private String userinfoName;
-	private String userEmailId;
-	private String userEmailDomain;
+	private String userinfoEmailId;
+	private String userinfoEmailDomain;
 	private String userinfoRegdate;
 	
 }
