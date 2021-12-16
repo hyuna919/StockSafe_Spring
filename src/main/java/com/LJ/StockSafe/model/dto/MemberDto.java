@@ -8,12 +8,14 @@ import lombok.Data;
 //@AllArgsConstructor
 //@Data
 public class MemberDto implements Serializable{
-	String memberId;
-	String memberPw;
-	String memberName;
-	String memberEmailId;
-	String memberEmailDomain;
-	String memberRegdate;
+	private String memberId;
+	private String memberPw;
+	private String memberName;
+	private String memberEmailId;
+	private String memberEmailDomain;
+	private String memberRegdate;
+	
+	
 	public MemberDto(String memberId, String memberPw, String memberName, String memberEmailId,
 			String memberEmailDomain, String memberRegdate) {
 		super();
