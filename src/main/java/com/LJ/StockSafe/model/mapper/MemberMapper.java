@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.LJ.StockSafe.model.dto.MemberDto;
-import com.LJ.StockSafe.model.dto.UserinfoDto;
 
 @Mapper
 public interface MemberMapper {

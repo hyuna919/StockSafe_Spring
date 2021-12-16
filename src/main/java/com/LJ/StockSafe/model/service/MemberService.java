@@ -3,7 +3,6 @@ package com.LJ.StockSafe.model.service;
 import java.util.List;
 
 import com.LJ.StockSafe.model.dto.MemberDto;
-import com.LJ.StockSafe.model.dto.UserinfoDto;
 
 public interface MemberService {
 	boolean createUser(MemberDto userinfodto);
