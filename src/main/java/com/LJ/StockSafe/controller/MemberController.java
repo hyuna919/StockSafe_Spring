@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.LJ.StockSafe.model.dto.MemberDto;
-import com.LJ.StockSafe.model.dto.UserinfoDto;
 import com.LJ.StockSafe.model.service.MemberService;
-import com.LJ.StockSafe.model.service.UserinfoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
