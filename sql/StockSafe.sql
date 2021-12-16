@@ -4,13 +4,13 @@ create database stocksafe_db;
 use stocksafe_db;
 
 create table member(
-    member_id varchar(20),
+    id varchar(20),
     member_pw varchar(30) not null,
     member_name varchar(20) not null,
     member_regdate datetime default now(),
     member_email_id varchar(30) not null,
     member_email_domain varchar(30) not null,
-    primary key(member_id)
+    primary key(id)
 );
 
 create table stock(
@@ -34,7 +34,7 @@ create table memberStock(
 	member_id varchar(20),
     stock_id varchar(10),
     primary key(id),
-	foreign key(member_id) references member(member_id),
+	foreign key(member_id) references member(id),
     foreign key(stock_id) references stock(id)
 );
 
@@ -43,7 +43,7 @@ create table likeStock(
 	member_id varchar(20),
     stock_id varchar(10),
     primary key(id),
-    foreign key(member_id) references member(member_id),
+    foreign key(member_id) references member(id),
     foreign key(stock_id) references stock(id)
 );
 
