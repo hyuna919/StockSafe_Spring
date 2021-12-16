@@ -14,14 +14,24 @@
 <mapper namespace="com.LJ.StockSafe.model.mapper.UserinfoMapper">
 	
 	<insert id="createUser" parameterType="UserinfoDto">
-		insert into userinfo(id, userinfo_pw, userinfo_name, user_emial_id, user_email_domain, userinfo_regdate)
-		VALUES( #{id}, #{userinfo_pw}, #{userinfo_name}, #{userEmialId}, #{userEmailDomain}, now()));
+		insert into userinfo(id, userinfo_pw, userinfo_name, user_email_id, user_email_domain, userinfo_regdate)
+		VALUES( #{id}, #{userinfo_pw}, #{userinfo_name}, #{user_email_id}, #{user_email_domain}, now()));
 	</insert>
 	
 	<select id="readUserAll" parameterType="String" resultType="UserinfoDto">
 		select *
+		if
 		from userinfo
-		where id = #{word}
+		<if test="key == 'id'">
+				where id like concat('%', #{word}, '%')
+		</if>
+		<if test="key == 'userinfo_name'">
+				where userinfo_name like concat('%', #{word}, '%')
+		</if>
+		<if test="key == 'userinfo_email_domain'">
+				where userinfo_email_domain like concat('%', #{word}, '%')
+		</if>
+		
 	</select>
 	
 	<select id="readUser" parameterType="String" resultType="UserinfoDto">
