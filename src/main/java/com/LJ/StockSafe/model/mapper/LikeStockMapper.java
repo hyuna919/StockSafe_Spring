@@ -12,6 +12,6 @@ public interface LikeStockMapper {
 
 	int createLikeStock(MemberStockDto memberstockdto);
 	List<MemberStockDto> readLikeStock(String memberId);
-	int deleteLikeStock(@Param("memberId") String memberId, @Param("stockId") String stockId);
+	int deleteLikeStock(MemberStockDto memberstockdto);
 	
 }

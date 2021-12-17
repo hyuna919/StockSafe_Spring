@@ -8,7 +8,7 @@ public interface LikeStockService {
 	
 	boolean createLikeStock(MemberStockDto memberstockdto);
 	List<MemberStockDto> readLikeStock(String memberId);
-	boolean deleteLikeStock(String memberId, String StockId);
+	boolean deleteLikeStock(MemberStockDto memberstockdto);
 	
 	
 }

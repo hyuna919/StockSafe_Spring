@@ -40,8 +40,8 @@ public class LikeStockController {
 	}
 	
 	@DeleteMapping
-	public ResponseEntity<String> deleteLikeStock(String memberId, String stockId){
-		if(likeStockService.deleteLikeStock(memberId, stockId)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	public ResponseEntity<String> deleteLikeStock(MemberStockDto memberstockdto){
+		if(likeStockService.deleteLikeStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}

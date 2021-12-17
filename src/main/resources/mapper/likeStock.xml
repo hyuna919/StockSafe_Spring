@@ -20,7 +20,7 @@
 		
 	</insert>
 	
-	<delete id="deleteLikeStock" parameterType="String">
+	<delete id="deleteLikeStock" parameterType="memberstockdto">
 		delete
 		from likeStock
 		where member_id=#{memberId} and stock_id=#{stockId};

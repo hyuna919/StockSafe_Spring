@@ -28,9 +28,9 @@ public class LikeStockServiceImpl implements LikeStockService{
 	}
 
 	@Override
-	public boolean deleteLikeStock(String memberId, String stockId) {
+	public boolean deleteLikeStock(MemberStockDto memberstockdto) {
 		// TODO Auto-generated method stub
-		if(likeStockmapper.deleteLikeStock(memberId, stockId)!=0) return true;
+		if(likeStockmapper.deleteLikeStock(memberstockdto)!=0) return true;
 		return false;
 	}
 

@@ -38,7 +38,7 @@ public class MemberStockController {
 	
 	
 	@DeleteMapping
-	ResponseEntity<String> deleteMemberStock(MemberStockDto memberstockdto){
+	ResponseEntity<String> deleteMemberStock(@RequestBody MemberStockDto memberstockdto){
 		if(memberStockService.deleteMemberStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
