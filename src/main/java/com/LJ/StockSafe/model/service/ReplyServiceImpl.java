@@ -22,7 +22,7 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public List<ReplyDto> readAllReply(int stockId) {
+	public List<ReplyDto> readAllReply(String stockId) {
 		// TODO Auto-generated method stub
 		return replyMapper.readAllReply(stockId);
 	}

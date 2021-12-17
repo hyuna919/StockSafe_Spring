@@ -6,7 +6,7 @@ import com.LJ.StockSafe.model.dto.ReplyDto;
 
 public interface ReplyService {
 	boolean createReply(ReplyDto replydto);
-	List<ReplyDto> readAllReply(int stockId);
+	List<ReplyDto> readAllReply(String stockId);
 	boolean updateReply(ReplyDto replydto);
 	boolean deleteReply(ReplyDto replydto);
 	

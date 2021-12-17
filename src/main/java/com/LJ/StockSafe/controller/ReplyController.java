@@ -32,7 +32,7 @@ public class ReplyController {
 	}
 	
 	@GetMapping
-	ResponseEntity<List<ReplyDto>> readAllReply(int stockId){
+	ResponseEntity<List<ReplyDto>> readAllReply(String stockId){
 		return new ResponseEntity<List<ReplyDto>>(replyService.readAllReply(stockId), HttpStatus.OK);
 	}
 	
