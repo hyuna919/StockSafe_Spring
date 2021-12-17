@@ -2,24 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  int createUser(UserinfoDto userinfodto);
-	List<UserinfoDto> readUserAll(String key, String word); 
-	UserinfoDto readUser(String id); 
-	int loginUser(String id, String userinfo_pw);
-	int updateUser(String id);
-	int deleteUser(String id);
-	
-	
-		this.id = id;
-		this.memberPw = memberPw;
-		this.memberName = memberName;
-		this.memberEmailId = memberEmailId;
-		this.memberEmailDomain = memberEmailDomain;
-		this.memberRegdate = memberRegdate;
-
-
- -->
-
 <mapper namespace="com.LJ.StockSafe.model.mapper.MemberMapper">
 	
 	<insert id="createUser" parameterType="MemberDto">
