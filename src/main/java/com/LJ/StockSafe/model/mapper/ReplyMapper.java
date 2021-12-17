@@ -9,7 +9,7 @@ import com.LJ.StockSafe.model.dto.ReplyDto;
 @Mapper
 public interface ReplyMapper {
 
-	int createReply(ReplyDto reply);
+	int createReply(ReplyDto replydto);
 	List<ReplyDto> readAllReply(int stockId);
 	int updateReply(int id, String userinfoId, String replyContent);
 	int deleteReply(int id, String userinfoId);

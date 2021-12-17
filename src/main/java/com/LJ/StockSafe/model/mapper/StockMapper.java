@@ -8,9 +8,9 @@ import com.LJ.StockSafe.model.dto.StockDto;
 
 @Mapper
 public interface StockMapper {
-	int createStock(StockDto stock);
+	int createStock(StockDto stockdto);
 	List<StockDto> readStockAll(String keyword);
 	StockDto readStockDetail(String id);
-	int updateStock(StockDto stock);
+	int updateStock(StockDto stockdto);
 	int deleteStock(String id);
 }

@@ -2,11 +2,6 @@ package com.LJ.StockSafe.model.dto;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-//@AllArgsConstructor
-//@Data
 public class MemberDto implements Serializable{
 	private String id;
 	private String memberPw;
@@ -14,6 +9,7 @@ public class MemberDto implements Serializable{
 	private String memberEmailId;
 	private String memberEmailDomain;
 	private String memberRegdate;
+	
 	public MemberDto(String id, String memberPw, String memberName, String memberEmailId, String memberEmailDomain,
 			String memberRegdate) {
 		super();
@@ -60,9 +56,5 @@ public class MemberDto implements Serializable{
 	public void setMemberRegdate(String memberRegdate) {
 		this.memberRegdate = memberRegdate;
 	}
-	
-	
-	
-	
 	
 }

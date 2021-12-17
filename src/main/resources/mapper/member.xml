@@ -10,12 +10,22 @@
 	int deleteUser(String id);
 	
 	
-		<if test="key == 'id'">
-				where id like concat('%', #{word}, '%')
-		</if>
+		this.id = id;
+		this.memberPw = memberPw;
+		this.memberName = memberName;
+		this.memberEmailId = memberEmailId;
+		this.memberEmailDomain = memberEmailDomain;
+		this.memberRegdate = memberRegdate;
+
+
  -->
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.MemberMapper">
+	
+	<insert id="createUser" parameterType="MemberDto">
+		insert into member(id, member_pw, member_name, member_email_id, member_email_domain, member_regdate)
+		Values(#{id}, #{memberPw}, #{memberName}, #{memberEmailId}, #{memberEmailDomain}, now())
+	</insert>
 	
 	<select id="readUserAll" parameterType="String" resultType="MemberDto">
 		select *
@@ -31,5 +41,29 @@
 		</if>
 	</select>
 	
+	
+	<select id="readUser" parameterType="String" resultType="MemberDto">
+		select *
+		from member
+		where id=#{id}
+	</select>
+	
+	<select id="loginUser" parameterType="String" resultType="String">
+		select member_name
+		from member
+		where id=#{id} and member_pw=#{memberPw}
+	</select>
+	
+	<update id="updateUser" parameterType="MemberDto">
+		update member
+		set member_name=#{memberName}, member_email_id=#{memberEmailId}, 
+		member_email_domain=#{memberEmailDomain}		
+		where id=#{id}
+	</update>
+
+	<delete id="deleteUser" parameterType="String">
+		delete from member
+		where id=#{id}
+	</delete>	
 </mapper>
 	

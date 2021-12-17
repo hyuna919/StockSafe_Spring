@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+ <mapper namespace="com.LJ.StockSafe.model.mapper.StockMapper">
+ 	
+
+
+ 	<insert id="createStock" parameterType="StockDto">
+ 		insert into stock(id, stock_name, stock_market, stock_sector, stock_wics, stock_marketcap, stock_count,
+ 		stock_foreigner, stock_per, stock_pbr, stock_bps,stock_divyield)
+ 		values(#{id}, #{stockName}, #{stockMarket}, #{stockSector}, #{stockWics}, #{stockMarketcap}, #{stockCount},
+ 		#{stockForeigner}, #{stockPer}, #{stockPbr}, #{stockBps}, #{stockDivyield})
+ 		
+ 	</insert>
+
+	
+	<select id="readStockAll" parameterType="String" resultType="StockDto">
+		
+	</select>
+ 	
+ 	<select id="readStockDetail" parameterType="String" resultType="StockDto">
+		select *
+		from stock
+		where id=#{id}
+	</select>
+ 	
+ 	
+ 
+	<update id="updateStock" parameterType="StockDto">
+		
+	</update> 
+	
+	<delete id="deleteStock" parameterType="String">
+		delete from stock
+		where id=#{id}
+	
+	</delete>
+ 
+ 
+ </mapper>
