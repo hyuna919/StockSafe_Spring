@@ -2,32 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  int createUser(UserinfoDto userinfodto);
-	List<UserinfoDto> readUserAll(String key, String word); 
-	UserinfoDto readUser(String id); 
-	int loginUser(String id, String userinfo_pw);
-	int updateUser(String id);
-	int deleteUser(String id);
-	
-	
-		this.id = id;
-		this.memberPw = memberPw;
-		this.memberName = memberName;
-		this.memberEmailId = memberEmailId;
-		this.memberEmailDomain = memberEmailDomain;
-		this.memberRegdate = memberRegdate;
-
-
- -->
-
 <mapper namespace="com.LJ.StockSafe.model.mapper.MemberMapper">
 	
-	<insert id="createUser" parameterType="MemberDto">
+	<insert id="createMember" parameterType="MemberDto">
 		insert into member(id, member_pw, member_name, member_email_id, member_email_domain, member_regdate)
 		Values(#{id}, #{memberPw}, #{memberName}, #{memberEmailId}, #{memberEmailDomain}, now())
 	</insert>
 	
-	<select id="readUserAll" parameterType="String" resultType="MemberDto">
+	<select id="readMemberAll" parameterType="String" resultType="MemberDto">
 		select *
 		from member
 		<if test="key == 'id'">
@@ -42,26 +24,26 @@
 	</select>
 	
 	
-	<select id="readUser" parameterType="String" resultType="MemberDto">
+	<select id="readMember" parameterType="String" resultType="MemberDto">
 		select *
 		from member
 		where id=#{id}
 	</select>
 	
-	<select id="loginUser" parameterType="String" resultType="String">
+	<select id="loginMember" parameterType="String" resultType="String">
 		select member_name
 		from member
 		where id=#{id} and member_pw=#{memberPw}
 	</select>
 	
-	<update id="updateUser" parameterType="MemberDto">
+	<update id="updateMember" parameterType="MemberDto">
 		update member
 		set member_name=#{memberName}, member_email_id=#{memberEmailId}, 
 		member_email_domain=#{memberEmailDomain}		
 		where id=#{id}
 	</update>
 
-	<delete id="deleteUser" parameterType="String">
+	<delete id="deleteMember" parameterType="String">
 		delete from member
 		where id=#{id}
 	</delete>	

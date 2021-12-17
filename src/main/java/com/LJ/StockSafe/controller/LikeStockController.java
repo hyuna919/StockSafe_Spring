@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.LJ.StockSafe.model.dto.UserStockDto;
+import com.LJ.StockSafe.model.dto.MemberStockDto;
 import com.LJ.StockSafe.model.service.LikeStockService;
 
 import io.swagger.annotations.Api;
@@ -29,14 +29,14 @@ public class LikeStockController {
 	private static final String FAIL = "fail";
 	
 	@PostMapping
-	public ResponseEntity<String> createLikeStock(@RequestBody UserStockDto userstockdto){
-		if(likeStockService.createLikeStock(userstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	public ResponseEntity<String> createLikeStock(@RequestBody MemberStockDto memberstockdto){
+		if(likeStockService.createLikeStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<UserStockDto>> readLikeStock(String memberId){
-		return new ResponseEntity<List<UserStockDto>>(likeStockService.readLikeStock(memberId), HttpStatus.OK);
+	public ResponseEntity<List<MemberStockDto>> readLikeStock(String memberId){
+		return new ResponseEntity<List<MemberStockDto>>(likeStockService.readLikeStock(memberId), HttpStatus.OK);
 	}
 	
 	@DeleteMapping

@@ -41,7 +41,13 @@ public class StockController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-//	List<StockDto> readStockAll(String keyword);
+	@GetMapping("/searchAll")
+	public ResponseEntity<List<StockDto>> readStockAll(String keyword){
+		return new ResponseEntity<List<StockDto>>(stockService.readStockAll(keyword), HttpStatus.OK);  
+	}
+
+	
+	
 //
 //	boolean updateStock(StockDto stockdto);
 	

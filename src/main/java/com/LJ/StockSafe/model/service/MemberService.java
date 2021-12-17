@@ -6,10 +6,10 @@ import com.LJ.StockSafe.model.dto.MemberDto;
 
 public interface MemberService {
 	
-	boolean createUser(MemberDto memberdto);
-	List<MemberDto> readUserAll(String key, String word); 
-	MemberDto readUser(String id); 
-	String loginUser(String id, String memberPw);
-	boolean updateUser(MemberDto memberdto);
-	boolean deleteUser(String id);
+	boolean createMember(MemberDto memberdto);
+	List<MemberDto> readMemberAll(String key, String word); 
+	MemberDto readMember(String id); 
+	String loginMember(String id, String memberPw);
+	boolean updateMember(MemberDto memberdto);
+	boolean deleteMember(String id);
 }

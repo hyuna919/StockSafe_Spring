@@ -15,40 +15,40 @@ public class MemberServiceImpl implements MemberService{
 	MemberMapper memberMapper;
 
 	@Override
-	public boolean createUser(MemberDto memberdto) {
+	public boolean createMember(MemberDto memberdto) {
 		// TODO Auto-generated method stub
-		if(memberMapper.createUser(memberdto)==1) return true;
+		if(memberMapper.createMember(memberdto)==1) return true;
 		return false;
 	}
 
 	@Override
-	public List<MemberDto> readUserAll(String key, String word) {
-		return memberMapper.readUserAll(key, word);
+	public List<MemberDto> readMemberAll(String key, String word) {
+		return memberMapper.readMemberAll(key, word);
 	}
 
 	@Override
-	public MemberDto readUser(String id) {
+	public MemberDto readMember(String id) {
 		// TODO Auto-generated method stub
-		return memberMapper.readUser(id);
+		return memberMapper.readMember(id);
 	}
 
 	@Override
-	public String loginUser(String id, String userinfo_pw) {
+	public String loginMember(String id, String memberPw) {
 		// TODO Auto-generated method stub
-		return memberMapper.loginUser(id, userinfo_pw);
+		return memberMapper.loginMember(id, memberPw);
 	}
 
 	@Override
-	public boolean updateUser(MemberDto memberdto) {
+	public boolean updateMember(MemberDto memberdto) {
 		// TODO Auto-generated method stub
-		if(memberMapper.updateUser(memberdto) != 0) return true;
+		if(memberMapper.updateMember(memberdto) != 0) return true;
 		return false;
 	}
 
 	@Override
-	public boolean deleteUser(String id) {
+	public boolean deleteMember(String id) {
 		// TODO Auto-generated method stub
-		if(memberMapper.deleteUser(id) !=0 ) return true;
+		if(memberMapper.deleteMember(id) !=0 ) return true;
 		return false;
 	}
 	
