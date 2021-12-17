@@ -29,10 +29,13 @@
 		where id=#{id}
 	</select>
  	
- 	
- 
 	<update id="updateStock" parameterType="StockDto">
-		
+		update stock
+		set stock_name=#{stockName}, stock_market=#{stockMarket}, stock_sector=#{stockSector},
+		stock_wics=#{stockWics}, stock_marketcap=#{stockMarketcap}, stock_count=#{stockCount},
+ 		stock_foreigner=#{stockForeigner}, stock_per=#{stockPer}, stock_pbr=#{stockPbr}, stock_bps=#{stockBps},
+		stock_divyield =#{stockDivyield}
+		where id=#{id}
 	</update> 
 	
 	<delete id="deleteStock" parameterType="String">
