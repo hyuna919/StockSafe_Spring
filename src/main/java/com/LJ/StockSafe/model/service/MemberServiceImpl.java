@@ -33,9 +33,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public String loginMember(String id, String memberPw) {
+	public String loginMember(MemberDto memberdto) {
 		// TODO Auto-generated method stub
-		return memberMapper.loginMember(id, memberPw);
+		return memberMapper.loginMember(memberdto);
 	}
 
 	@Override

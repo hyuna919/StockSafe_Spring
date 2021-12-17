@@ -12,7 +12,7 @@ public interface MemberMapper {
 	int createMember(MemberDto memberdto);
 	List<MemberDto> readMemberAll(@Param("key") String key, @Param("word") String word); 
 	MemberDto readMember(String id);
-	String loginMember(@Param("id") String id, @Param("memberPw") String memberPw);
+	String loginMember(MemberDto memberdto);
 	int updateMember(MemberDto memberdto);
 	int deleteMember(String id);
 }

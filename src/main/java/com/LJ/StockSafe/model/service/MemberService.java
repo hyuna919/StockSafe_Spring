@@ -9,7 +9,7 @@ public interface MemberService {
 	boolean createMember(MemberDto memberdto);
 	List<MemberDto> readMemberAll(String key, String word); 
 	MemberDto readMember(String id); 
-	String loginMember(String id, String memberPw);
+	String loginMember(MemberDto memberdto);
 	boolean updateMember(MemberDto memberdto);
 	boolean deleteMember(String id);
 }
