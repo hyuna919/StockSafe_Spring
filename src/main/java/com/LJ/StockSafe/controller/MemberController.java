@@ -57,9 +57,9 @@ public class MemberController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> loginMember(String id, String memberPw)
+	public ResponseEntity<String> loginMember(@RequestBody MemberDto memberdto)
 	{
-		String membername1 = memberService.loginMember(id, memberPw);
+		String membername1 = memberService.loginMember(memberdto);
 		if( membername1 != null) return new ResponseEntity<String>(membername1 + "님 환영합니다.", HttpStatus.OK); 
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}

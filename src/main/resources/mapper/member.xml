@@ -30,7 +30,7 @@
 		where id=#{id}
 	</select>
 	
-	<select id="loginMember" parameterType="String" resultType="String">
+	<select id="loginMember" parameterType="MemberDto" resultType="String">
 		select member_name
 		from member
 		where id=#{id} and member_pw=#{memberPw}
