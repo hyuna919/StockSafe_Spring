@@ -2,7 +2,6 @@ package com.LJ.StockSafe.controller;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ import com.LJ.StockSafe.model.dto.MemberDto;
 import com.LJ.StockSafe.model.service.MemberService;
 
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/member")

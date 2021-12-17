@@ -1,16 +1,12 @@
 package com.LJ.StockSafe.model.dto;
 
-import java.io.Serializable;
-
-public class MemberDto implements Serializable{
+public class MemberDto {
 	private String id;
 	private String memberPw;
 	private String memberName;
 	private String memberEmailId;
 	private String memberEmailDomain;
 	private String memberRegdate;
-	
-	
 	
 	public MemberDto() {
 		super();
