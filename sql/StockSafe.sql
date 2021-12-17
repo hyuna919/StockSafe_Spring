@@ -56,5 +56,6 @@ create table reply(
     reply_level int not null,
     reply_parent int not null,
     primary key(id),
+    foreign key(member_id) references member(id),
     foreign key(stock_id) references stock(id)
 );
