@@ -26,24 +26,24 @@ public class ReplyController {
 	ReplyService replyService;
 	
 	@PostMapping
-	ResponseEntity<String> createReply(ReplyDto replydto){
+	public ResponseEntity<String> createReply(ReplyDto replydto){
 		if(replyService.createReply(replydto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		else return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping
-	ResponseEntity<List<ReplyDto>> readAllReply(String stockId){
+	public ResponseEntity<List<ReplyDto>> readAllReply(String stockId){
 		return new ResponseEntity<List<ReplyDto>>(replyService.readAllReply(stockId), HttpStatus.OK);
 	}
 	
 	@PutMapping
-	ResponseEntity<String> updateReply(ReplyDto replydto){
+	public ResponseEntity<String> updateReply(ReplyDto replydto){
 		if(replyService.updateReply(replydto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		else return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@DeleteMapping
-	ResponseEntity<String> deleteReply(ReplyDto replydto){
+	public ResponseEntity<String> deleteReply(ReplyDto replydto){
 		if(replyService.deleteReply(replydto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		else return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}

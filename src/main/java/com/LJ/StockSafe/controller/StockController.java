@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,20 +37,24 @@ public class StockController {
 		return new ResponseEntity<StockDto>(stockService.readStockDetail(id), HttpStatus.OK);  
 	}
 	
-	@DeleteMapping
-	public ResponseEntity<String> deleteStock(String id){
-		if(stockService.deleteStock(id)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-	}
-	
 	@GetMapping("/searchAll")
 	public ResponseEntity<List<StockDto>> readStockAll(String keyword){
 		return new ResponseEntity<List<StockDto>>(stockService.readStockAll(keyword), HttpStatus.OK);  
 	}
 
 	
+	@PutMapping
+	public ResponseEntity<String> updateStock(@RequestBody StockDto stockdto){
+		if(stockService.updateStock(stockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+	}
 	
-//
-//	boolean updateStock(StockDto stockdto);
+	@DeleteMapping
+	public ResponseEntity<String> deleteStock(String id){
+		if(stockService.deleteStock(id)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+	}
+	
+	
 	
 }

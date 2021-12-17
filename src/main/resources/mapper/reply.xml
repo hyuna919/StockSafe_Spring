@@ -16,14 +16,14 @@
 	</select>
 	
 	<update id="updateReply" parameterType="ReplyDto">
-		update reply set
-		reply_content=#{replyContent}
-		where id=#{id} and member_id={memberId} 
+		update reply 
+		set reply_content=#{replyContent}
+		where id=#{id} and member_id=#{memberId}
 	</update>
 	
 	<delete id="deleteReply" parameterType="ReplyDto">
 		delete from reply
-		where id=#{id} and member_id={memberId}
+		where id=#{id} and member_id=#{memberId}
 	</delete>
 
 	

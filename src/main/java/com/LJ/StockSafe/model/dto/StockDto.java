@@ -15,6 +15,13 @@ public class StockDto {
 	private float stockBps;
 	private float stockDivyield;
 	
+	@Override
+	public String toString() {
+		return "StockDto [id=" + id + ", stockName=" + stockName + ", stockMarket=" + stockMarket + ", stockSector="
+				+ stockSector + ", stockWics=" + stockWics + ", stockMarketcap=" + stockMarketcap + ", stockCount="
+				+ stockCount + ", stockForeigner=" + stockForeigner + ", stockPer=" + stockPer + ", stockPbr="
+				+ stockPbr + ", stockBps=" + stockBps + ", stockDivyield=" + stockDivyield + "]";
+	}
 	public StockDto() {
 		super();
 	}
