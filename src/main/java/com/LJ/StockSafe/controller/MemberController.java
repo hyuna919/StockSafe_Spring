@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,7 +33,7 @@ public class MemberController {
 
 	
 	@PostMapping("/signup")
-	public ResponseEntity<String> createMember(MemberDto memberdto){
+	public ResponseEntity<String> createMember(@RequestBody MemberDto memberdto){
 		if(memberService.createMember(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
@@ -50,7 +51,7 @@ public class MemberController {
 	}
 
 	@PutMapping("/edit")
-	public ResponseEntity<String> updateMember(MemberDto memberdto){
+	public ResponseEntity<String> updateMember(@RequestBody MemberDto memberdto){
 		if(memberService.updateMember(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
