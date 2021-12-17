@@ -32,41 +32,41 @@ public class MemberController {
 
 	
 	@PostMapping("/signup")
-	public ResponseEntity<String> createUser(MemberDto memberdto){
-		if(memberService.createUser(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	public ResponseEntity<String> createMember(MemberDto memberdto){
+		if(memberService.createMember(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/alluser")
-	public ResponseEntity<List<MemberDto>> readUserAll(String key, String word){
-		return new ResponseEntity<List<MemberDto>>(memberService.readUserAll(key, word), HttpStatus.OK);
+	@GetMapping("/allmember")
+	public ResponseEntity<List<MemberDto>> readMemberAll(String key, String word){
+		return new ResponseEntity<List<MemberDto>>(memberService.readMemberAll(key, word), HttpStatus.OK);
 	}
 	
 	@GetMapping
-	public ResponseEntity<MemberDto> readUser(String id)
+	public ResponseEntity<MemberDto> readMember(String id)
 	{
 		//null 이셉션 처리.
-		return new ResponseEntity<MemberDto>(memberService.readUser(id), HttpStatus.OK);
+		return new ResponseEntity<MemberDto>(memberService.readMember(id), HttpStatus.OK);
 	}
 
 	@PutMapping("/edit")
-	public ResponseEntity<String> updateUser(MemberDto memberdto){
-		if(memberService.updateUser(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	public ResponseEntity<String> updateMember(MemberDto memberdto){
+		if(memberService.updateMember(memberdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> loginUser(String id, String memberPw)
+	public ResponseEntity<String> loginMember(String id, String memberPw)
 	{
-		String membername1 = memberService.loginUser(id, memberPw);
+		String membername1 = memberService.loginMember(id, memberPw);
 		if( membername1 != null) return new ResponseEntity<String>(membername1 + "님 환영합니다.", HttpStatus.OK); 
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@DeleteMapping
-	public ResponseEntity<String> deleteUser(String id)
+	public ResponseEntity<String> deleteMember(String id)
 	{
-		if(memberService.deleteUser(id)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		if(memberService.deleteMember(id)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 

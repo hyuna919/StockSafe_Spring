@@ -11,34 +11,34 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.LJ.StockSafe.model.dto.UserStockDto;
-import com.LJ.StockSafe.model.service.UserStockService;
+import com.LJ.StockSafe.model.dto.MemberStockDto;
+import com.LJ.StockSafe.model.service.MemberStockService;
 
 @RestController
-@RequestMapping("/userstock")
-public class UserStockController {
+@RequestMapping("/memberstock")
+public class MemberStockController {
 
 	private static final String SUCCESS= "success";
 	private static final String FAIL= "fail";
 	
 	@Autowired
-	UserStockService userStockService;
+	MemberStockService memberStockService;
 	
 	@PostMapping
-	ResponseEntity<String> createUserStock(UserStockDto userstockdto){
-		if(userStockService.createUserStock(userstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	ResponseEntity<String> createMemberStock(MemberStockDto memberstockdto){
+		if(memberStockService.createMemberStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping
-	ResponseEntity<List<UserStockDto>> readUserStock(String memberId){
-		return new ResponseEntity<List<UserStockDto>> (userStockService.readUserStock(memberId), HttpStatus.OK);
+	ResponseEntity<List<MemberStockDto>> readMemberStock(String memberId){
+		return new ResponseEntity<List<MemberStockDto>> (memberStockService.readMemberStock(memberId), HttpStatus.OK);
 	}
 	
 	
 	@DeleteMapping
-	ResponseEntity<String> deleteUserStock(UserStockDto userstockdto){
-		if(userStockService.deleteUserStock(userstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+	ResponseEntity<String> deleteMemberStock(MemberStockDto memberstockdto){
+		if(memberStockService.deleteMemberStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	

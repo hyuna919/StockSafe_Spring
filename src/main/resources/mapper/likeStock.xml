@@ -4,13 +4,13 @@
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.LikeStockMapper">
 
-	<select id="readLikeStock" parameterType="string" resultType="UserStockDto" >
+	<select id="readLikeStock" parameterType="string" resultType="MemberStockDto" >
 		select *
 		from likeStock
 		where member_id = #{memberId}
 	</select>
 	
-	<insert id="createLikeStock" parameterType="UserStockDto" useGeneratedKeys="true"
+	<insert id="createLikeStock" parameterType="MemberStockDto" useGeneratedKeys="true"
     keyProperty="id">
 		insert into likeStock(member_id, stock_id)
 		select #{memberId}, #{stockId} from dual

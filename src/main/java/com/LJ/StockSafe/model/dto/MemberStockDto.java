@@ -1,12 +1,12 @@
 package com.LJ.StockSafe.model.dto;
 
 
-public class UserStockDto {
+public class MemberStockDto {
 	private int id;
 	private String memberId;
 	private String stockId;
 	
-	public UserStockDto(int id, String memberId, String stockId) {
+	public MemberStockDto(int id, String memberId, String stockId) {
 		super();
 		this.id = id;
 		this.memberId = memberId;

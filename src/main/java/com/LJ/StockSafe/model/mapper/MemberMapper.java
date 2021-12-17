@@ -9,10 +9,10 @@ import com.LJ.StockSafe.model.dto.MemberDto;
 
 @Mapper
 public interface MemberMapper {
-	int createUser(MemberDto memberdto);
-	List<MemberDto> readUserAll(@Param("key") String key, @Param("word") String word); 
-	MemberDto readUser(String id);
-	String loginUser(@Param("id") String id, @Param("memberPw") String memberPw);
-	int updateUser(MemberDto memberdto);
-	int deleteUser(String id);
+	int createMember(MemberDto memberdto);
+	List<MemberDto> readMemberAll(@Param("key") String key, @Param("word") String word); 
+	MemberDto readMember(String id);
+	String loginMember(@Param("id") String id, @Param("memberPw") String memberPw);
+	int updateMember(MemberDto memberdto);
+	int deleteMember(String id);
 }

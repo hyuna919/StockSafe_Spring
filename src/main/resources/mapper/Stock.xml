@@ -17,7 +17,10 @@
 
 	
 	<select id="readStockAll" parameterType="String" resultType="StockDto">
-		
+		select id, stock_name, stock_sector
+		from stock
+		where id like concat('%', #{keyword}, '%') or stock_name like concat('%', #{keyword}, '%') 
+		or stock_sector like concat('%', #{keyword}, '%')
 	</select>
  	
  	<select id="readStockDetail" parameterType="String" resultType="StockDto">

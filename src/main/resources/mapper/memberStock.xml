@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.LJ.StockSafe.model.mapper.UserStockMapper">
+<mapper namespace="com.LJ.StockSafe.model.mapper.MemberStockMapper">
 	
-	<insert id="createUserStock" parameterType="UserStockDto" useGeneratedKeys="true"
+	<insert id="createMemberStock" parameterType="MemberStockDto" useGeneratedKeys="true"
     keyProperty="id">
 		insert into memberStock(member_id, stock_id)
 		select #{memberId}, #{stockId} from dual
@@ -14,14 +14,14 @@
 		
 	</insert>
 	
-	<select id="readUserStock" parameterType="String" resultType="UserStockDto">
+	<select id="readMemberStock" parameterType="String" resultType="MemberStockDto">
 		select *
 		from memberStock
 		where member_id = #{memberId}
 	</select>
 	
 	
-	<delete id="deleteUserStock" parameterType="UserStockDto">
+	<delete id="deleteMemberStock" parameterType="MemberStockDto">
 		delete from memberStock
 		where stock_id = #{stockId}
 	</delete>
