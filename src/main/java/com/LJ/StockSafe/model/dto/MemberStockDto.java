@@ -6,6 +6,10 @@ public class MemberStockDto {
 	private String memberId;
 	private String stockId;
 	
+	public MemberStockDto() {
+		super();
+	}
+	
 	public MemberStockDto(int id, String memberId, String stockId) {
 		super();
 		this.id = id;

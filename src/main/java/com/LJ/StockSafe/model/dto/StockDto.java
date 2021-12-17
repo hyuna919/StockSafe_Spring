@@ -16,7 +16,9 @@ public class StockDto {
 	private float stockBps;
 	private float stockDivyield;
 	
-	
+	public StockDto() {
+		super();
+	}
 	public StockDto(String id, String stockName, String stockMarket, String stockSector, String stockWics,
 			long stockMarketcap, long stockCount, float stockForeigner, float stockPer, float stockPbr, float stockBps,
 			float stockDivyield) {

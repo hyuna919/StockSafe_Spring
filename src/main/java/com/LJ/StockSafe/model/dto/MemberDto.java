@@ -10,6 +10,11 @@ public class MemberDto implements Serializable{
 	private String memberEmailDomain;
 	private String memberRegdate;
 	
+	
+	
+	public MemberDto() {
+		super();
+	}
 	public MemberDto(String id, String memberPw, String memberName, String memberEmailId, String memberEmailDomain,
 			String memberRegdate) {
 		super();

@@ -10,6 +10,9 @@ public class ReplyDto {
 	private int replyLevel;
 	private int replyParent;
 	
+	public ReplyDto() {
+		super();
+	}
 	public ReplyDto(int id, String stockId, String replyContent, String memberId, String replyRegdate, int replyLevel,
 			int replyParent) {
 		super();
