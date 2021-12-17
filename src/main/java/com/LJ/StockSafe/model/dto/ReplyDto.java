@@ -1,6 +1,5 @@
 package com.LJ.StockSafe.model.dto;
 
-
 public class ReplyDto {
 	private int id;
 	private String stockId;
