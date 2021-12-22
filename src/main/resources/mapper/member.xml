@@ -39,7 +39,7 @@
 	<update id="updateMember" parameterType="MemberDto">
 		update member
 		set member_name=#{memberName}, member_email_id=#{memberEmailId}, 
-		member_email_domain=#{memberEmailDomain}		
+		member_email_domain=#{memberEmailDomain}, member_pw=#{memberPw}
 		where id=#{id}
 	</update>
 

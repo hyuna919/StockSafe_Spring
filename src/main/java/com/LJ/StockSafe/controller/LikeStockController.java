@@ -29,13 +29,16 @@ public class LikeStockController {
 	private static final String FAIL = "fail";
 	
 	@PostMapping
-	public ResponseEntity<String> createLikeStock(@RequestBody MemberStockDto memberstockdto){
+	public ResponseEntity<String> createLikeStock(@RequestBody MemberStockDto memberstockdto) throws Exception{
 		if(likeStockService.createLikeStock(memberstockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<MemberStockDto>> readLikeStock(String memberId){
+	public ResponseEntity<List<MemberStockDto>> readLikeStock(String memberId) throws Exception{
+		
+		
+		
 		return new ResponseEntity<List<MemberStockDto>>(likeStockService.readLikeStock(memberId), HttpStatus.OK);
 	}
 	

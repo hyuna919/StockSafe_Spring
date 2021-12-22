@@ -12,4 +12,6 @@ public interface MemberService {
 	String loginMember(MemberDto memberdto);
 	boolean updateMember(MemberDto memberdto);
 	boolean deleteMember(String id);
+	
+	boolean findMemberPw(MemberDto memberdto);
 }
