@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+ <mapper namespace="com.LJ.StockSafe.model.mapper.NewsMapper">
+ 	
+
+
+ 	<insert id="createNews" parameterType="NewsDto">
+ 		insert into news(stock_id, news_title, news_date, news_uri)
+ 		values(#{stockId}, #{newsTitle}, #{newsDate}, #{newsUri})
+ 	</insert>
+
+	
+	<select id="readStockNews" parameterType="String" resultType="NewsDto">
+		select *
+		from news
+		where stock_id=#{id}
+	</select>
+
+	
+	<delete id="deleteNews" parameterType="String">
+		delete from stock
+		where news_date=#{date}
+	</delete>
+ 
+ 
+ </mapper>

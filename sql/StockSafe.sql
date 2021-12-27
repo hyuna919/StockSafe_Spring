@@ -70,6 +70,16 @@ create table reply(
     foreign key(stock_id) references stock(id)
 );
 
+create table news(
+    id int auto_increment,
+    stock_id varchar(10),
+    news_title varchar(50),
+    news_date varchar(20),
+    news_uri varchar(512),
+    primary key(id),
+    foreign key(stock_id) references stock(id)
+);
+
 # 멤버 추가  
 insert into member
 values("ssafy","ssafy","ssafy",now(),"ssafy","ssafy");
@@ -107,3 +117,13 @@ values("a","000660");
 # 관심종목 추가
 insert into likestock(member_id, predict_id)
 values("a","051910");
+
+# 뉴스 추가
+insert into news
+values(1, "005930","① 삼성과 치킨게임 아닌 윈윈 생태계 구축","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004001373&office_id=011&code=005930&sm=title_entity_id.basic");
+insert into news
+values(2, "005930","삼성전자, 부산 에코델타시티에 \'스마트홈\' 구축","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004762649&office_id=014&code=005930&sm=title_entity_id.basic");
+insert into news
+values(3, "051910","LG화학, 시총 3위서 8위로 추락…속타는 개미들 언제쯤 웃을까","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004899389&office_id=009&code=051910&sm=title_entity_id.basic");
+
+# 댓글
