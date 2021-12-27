@@ -4,9 +4,11 @@
 
 <mapper namespace="com.LJ.StockSafe.model.mapper.LikeStockMapper">
 
-	<select id="readLikeStock" parameterType="string" resultType="MemberStockDto" >
+	<select id="readLikeStock" parameterType="string" resultType="MemberStockDto" > 
 		select *
-		from likeStock
+		from likeStock m
+		join predict p
+		on m.predict_id = p.id
 		where member_id = #{memberId}
 	</select>
 	

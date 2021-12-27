@@ -6,24 +6,25 @@
 	
 	<insert id="createMemberStock" parameterType="MemberStockDto" useGeneratedKeys="true"
     keyProperty="id">
-		insert into memberStock(member_id, stock_id)
-		select #{memberId}, #{stockId} from dual
+		insert into memberStock(member_id, predict_id)
+		select #{memberId}, #{predictId} from dual
 		where not exists(
-			select member_id, stock_id from memberStock
-			where member_id=#{memberId} and stock_id = #{stockId})
-		
+			select member_id, predict_id from memberStock
+			where member_id=#{memberId} and predict_id = #{predictId})
 	</insert>
 	
 	<select id="readMemberStock" parameterType="String" resultType="MemberStockDto">
 		select *
-		from memberStock
+		from memberStock m
+		join predict p
+		on m.predict_id = p.id
 		where member_id = #{memberId}
 	</select>
 	
 	
 	<delete id="deleteMemberStock" parameterType="MemberStockDto">
 		delete from memberStock
-		where stock_id = #{stockId}
+		where id = #{id}
 	</delete>
 	
 </mapper>
