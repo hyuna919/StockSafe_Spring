@@ -16,8 +16,8 @@
 	<select id="readMemberStock" parameterType="String" resultType="MemberStockDto">
 		select *
 		from memberStock m
-		join predict p
-		on m.predict_id = p.id
+		join predict p on m.predict_id = p.id
+		join stock s on m.predict_id = s.id
 		where member_id = #{memberId}
 	</select>
 	
