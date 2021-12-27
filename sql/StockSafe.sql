@@ -84,16 +84,25 @@ values("005930","삼성전자","KOSPI","전기전자","반도체와반도체장�
 insert into stock
 values("051910","LG화학","KOSPI","화학","화학",44614400000000, 70592343, 46.67, 16.49, 2.31,273781,1.58,400000);
 
+insert into stock
+values("000660","SK하이닉스","KOSPI","전기전자","반도체와반도체장비",92092300000000, 728002365, 48.87, 11.44, 1.48,85338,0.92,126000);
+
 # 예상가 추가
 insert into predict
-values("005930","70000","80000","90000","100000");
+values("005930",70000,8000,90000,100000);
 
 insert into predict
-values("051910","70000","80000","90000","100000");
+values("051910",390000,380000,450000,100000);
+
+insert into predict
+values("000660",128000,120000,121000,100000);
 
 # 내종목 추가
 insert into memberstock(member_id, predict_id)
 values("a","005930");
+
+insert into memberstock(member_id, predict_id)
+values("a","000660");
 
 # 관심종목 추가
 insert into likestock(member_id, predict_id)
