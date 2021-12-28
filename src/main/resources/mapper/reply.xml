@@ -6,8 +6,8 @@
 
 	<insert id="createReply" parameterType="ReplyDto" useGeneratedKeys="true"
     keyProperty="id">
-		insert into reply(stock_id, reply_content, member_id, reply_regdate, reply_level, reply_parent)
-		values(#{stockId}, #{replyContent}, #{memberId}, now(), #{replyLevel}, #{replyParent})
+		insert into reply(stock_id, reply_content, member_id, reply_level, reply_parent)
+		values(#{stockId}, #{replyContent}, #{memberId}, #{replyLevel}, #{replyParent})
 	</insert>
 	
 	<select id="readAllReply" parameterType="String" resultType="ReplyDto">
