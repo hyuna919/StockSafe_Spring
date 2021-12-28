@@ -11,8 +11,11 @@
 	</insert>
 	
 	<select id="readAllReply" parameterType="String" resultType="ReplyDto">
-		select * from reply
+		select *
+		from reply
 		where stock_id=#{stockId}
+		order by id DESC
+		limit 10
 	</select>
 	
 	<update id="updateReply" parameterType="ReplyDto">

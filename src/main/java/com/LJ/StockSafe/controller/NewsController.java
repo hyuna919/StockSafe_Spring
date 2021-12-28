@@ -36,6 +36,8 @@ public class NewsController {
 	
 	@GetMapping
 	public ResponseEntity<List<NewsDto>> readStockNews(String stockId){
+		System.out.println("----"+stockId);
+		System.out.println(newsService.readStockNews(stockId).toString());
 		return new ResponseEntity<List<NewsDto>>(newsService.readStockNews(stockId), HttpStatus.OK);  
 	}
 	
