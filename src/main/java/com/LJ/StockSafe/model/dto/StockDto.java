@@ -1,5 +1,6 @@
 package com.LJ.StockSafe.model.dto;
 
+
 public class StockDto {
 	private String id;
 	private String stockName;

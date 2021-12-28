@@ -42,7 +42,6 @@ public class StockController {
 		return new ResponseEntity<List<StockDto>>(stockService.readStockAll(keyword), HttpStatus.OK);  
 	}
 
-	
 	@PutMapping
 	public ResponseEntity<String> updateStock(@RequestBody StockDto stockdto){
 		if(stockService.updateStock(stockdto)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
@@ -54,7 +53,5 @@ public class StockController {
 		if(stockService.deleteStock(id)) return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
-	
-	
 	
 }

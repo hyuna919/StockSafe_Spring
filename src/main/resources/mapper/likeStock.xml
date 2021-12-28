@@ -15,18 +15,18 @@
 	
 	<insert id="createLikeStock" parameterType="MemberStockDto" useGeneratedKeys="true"
     keyProperty="id">
-		insert into likeStock(member_id, stock_id)
-		select #{memberId}, #{stockId} from dual
+		insert into likeStock(member_id, predict_id)
+		select #{memberId}, #{predictId} from dual
 		where not exists(
-			select member_id, stock_id from likeStock
-			where member_id=#{memberId} and stock_id = #{stockId})
+			select member_id, predict_id from likeStock
+			where member_id=#{memberId} and predict_id = #{predictId})
 		
 	</insert>
 	
 	<delete id="deleteLikeStock" parameterType="memberstockdto">
 		delete
 		from likeStock
-		where member_id=#{memberId} and stock_id=#{stockId};
+		where member_id=#{memberId} and predict_id=#{predictId};
 	</delete>
 
 </mapper>

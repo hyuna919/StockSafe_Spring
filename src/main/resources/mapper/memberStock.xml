@@ -24,7 +24,7 @@
 	
 	<delete id="deleteMemberStock" parameterType="MemberStockDto">
 		delete from memberStock
-		where id = #{id}
+		where member_id=#{memberId} and predict_id=#{predictId};
 	</delete>
 	
 </mapper>

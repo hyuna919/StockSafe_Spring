@@ -6,7 +6,7 @@
 	
 	<insert id="createMember" parameterType="MemberDto">
 		insert into member(id, member_pw, member_name, member_email_id, member_email_domain, member_regdate)
-		Values(#{id}, #{memberPw}, #{memberName}, #{memberEmailId}, #{memberEmailDomain}, now())
+		values(#{id}, #{memberPw}, #{memberName}, #{memberEmailId}, #{memberEmailDomain}, now())
 	</insert>
 	
 	<select id="readMemberAll" parameterType="String" resultType="MemberDto">

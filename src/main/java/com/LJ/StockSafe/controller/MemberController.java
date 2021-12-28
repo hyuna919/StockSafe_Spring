@@ -60,7 +60,11 @@ public class MemberController {
 	public ResponseEntity<String> loginMember(@RequestBody MemberDto memberdto)
 	{
 		String membername1 = memberService.loginMember(memberdto);
-		if( membername1 != null) return new ResponseEntity<String>(membername1, HttpStatus.OK); 
+		if( membername1 != null) 
+		{
+			return new ResponseEntity<String>(membername1, HttpStatus.OK); 			
+		}
+		
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
