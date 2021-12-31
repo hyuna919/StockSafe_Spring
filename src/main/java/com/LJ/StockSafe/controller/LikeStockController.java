@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.LJ.StockSafe.model.dto.MemberStockDto;
 import com.LJ.StockSafe.model.service.LikeStockService;
 
-import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/likestock")
