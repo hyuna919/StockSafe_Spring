@@ -21,7 +21,7 @@
 
 	
 	<delete id="deleteNews" parameterType="String">
-		delete from stock
+		delete from news
 		where news_date=#{date}
 	</delete>
  
