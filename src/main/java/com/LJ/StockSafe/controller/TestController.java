@@ -13,6 +13,12 @@ import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 import yahoofinance.histquotes.Interval;
 
+/*
+ * 
+ * Yahoo Finance ì‚¬ìš©
+ * í•œêµ­ ì£¼ì‹ : ì‚¼ì„±ì „ì, skí•˜ì´ë‹‰ìŠ¤
+ * 
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -21,7 +27,6 @@ public class TestController {
     @GetMapping("/pytest")
     public String pytest() throws IOException {
     
-//        System.setProperty("python.import.site", "false"); // jython-standaloneÀÌ ¾Æ´Ò °æ¿ì site ¸ğµâ ¿¡·¯ ÇØ°á ¹æ¾È
 //    	Stock stock = YahooFinance.get("000660.KS");
     	Calendar from = Calendar.getInstance();
     	Calendar to = Calendar.getInstance();
@@ -33,7 +38,7 @@ public class TestController {
     	BigDecimal peg = stock.getStats().getPeg();
     	BigDecimal dividend = stock.getDividend().getAnnualYieldPercent();
     	 
-    	//Àú°¡, °í°¡, ½Ã°¡, Á¾°¡
+    	// ëª¨ë“  ì •ë³´ ì¶œë ¥
     	stock.print();
 	
         return "hello";
