@@ -1,5 +1,6 @@
 package com.LJ.StockSafe.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.LJ.StockSafe.model.dto.PriceDto;
 import com.LJ.StockSafe.model.dto.StockDto;
 import com.LJ.StockSafe.model.service.StockService;
+import com.LJ.StockSafe.util.FinanceUtil;
 
 @RestController
 @RequestMapping("/stock")
@@ -24,6 +27,9 @@ public class StockController {
 
 	@Autowired
 	StockService stockService;
+	
+	@Autowired
+	FinanceUtil financeUtil;
 	
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
@@ -37,6 +43,11 @@ public class StockController {
 	@GetMapping
 	public ResponseEntity<StockDto> readStockDetail(String id){
 		return new ResponseEntity<StockDto>(stockService.readStockDetail(id), HttpStatus.OK);  
+	}
+	
+	@GetMapping("/price")
+	public ResponseEntity<PriceDto> readPrice(String id) throws IOException{
+		return new ResponseEntity<PriceDto>(financeUtil.readPrice(id), HttpStatus.OK);  
 	}
 	
 	@GetMapping("/searchAll")
