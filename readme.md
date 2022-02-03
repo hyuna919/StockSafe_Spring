@@ -31,3 +31,8 @@ server.address=0.0.0.0
 2. 도커 실행
    docker run -p {인스턴스포트}:{도커포트} -d {도커아이디}/{도커레파지토리}:{태그} &
    
+   
+
+## 젠킨스 사용법
+https://www.notion.so/Sub-PJT3-ac7f22cf00c048c1a31e08160fce3aac
+   
