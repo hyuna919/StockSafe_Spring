@@ -8,10 +8,8 @@
 
 
  	<insert id="createStock" parameterType="StockDto">
- 		insert into stock(id, stock_name, stock_market, stock_sector, stock_wics, stock_marketcap, stock_count,
- 		stock_foreigner, stock_per, stock_pbr, stock_bps,stock_divyield)
- 		values(#{id}, #{stockName}, #{stockMarket}, #{stockSector}, #{stockWics}, #{stockMarketcap}, #{stockCount},
- 		#{stockForeigner}, #{stockPer}, #{stockPbr}, #{stockBps}, #{stockDivyield})
+ 		insert into stock(id, stock_name, stock_market, stock_sector, stock_industry)
+ 		values(#{id}, #{stockName}, #{stockMarket}, #{stockSector}, #{stockIndustry})
  		
  	</insert>
 
@@ -23,6 +21,18 @@
 		or stock_sector like concat('%', #{keyword}, '%')
 	</select>
  	
+	 <!-- this.id = id;
+		this.stockName = stockName;
+		this.stockMarket = stockMarket;
+		this.stockSector = stockSector;
+		this.stockindustry = stockindustry;
+		this.stockMarketcap = stockMarketcap;
+		this.stockCount = stockCount;
+		this.stockForeigner = stockForeigner;
+		this.stockPer = stockPer;
+		this.stockPbr = stockPbr;
+		this.stockBps = stockBps;
+		this.stockDivyield = stockDivyield; -->
  	<select id="readStockDetail" parameterType="String" resultType="StockDto">
 		select *
 		from stock s
@@ -32,9 +42,7 @@
 	<update id="updateStock" parameterType="StockDto">
 		update stock
 		set stock_name=#{stockName}, stock_market=#{stockMarket}, stock_sector=#{stockSector},
-		stock_wics=#{stockWics}, stock_marketcap=#{stockMarketcap}, stock_count=#{stockCount},
- 		stock_foreigner=#{stockForeigner}, stock_per=#{stockPer}, stock_pbr=#{stockPbr}, stock_bps=#{stockBps},
-		stock_divyield =#{stockDivyield}
+		stock_industry=#{stockIndustry}
 		where id=#{id}
 	</update> 
 	
