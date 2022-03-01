@@ -156,6 +156,58 @@ values("MSFT",390000,380000,450000,100000);
 insert into predict
 values("AMZN",128000,120000,121000,100000);
 
+insert into predict
+values("GOOG",70000,8000,90000,100000);
+
+insert into predict
+values("FB",390000,380000,450000,100000);
+
+insert into predict
+values("TSLA",128000,120000,121000,100000);
+
+
+insert into predict
+values("NFLX",70000,8000,90000,100000);
+
+insert into predict
+values("BRK-A",390000,380000,450000,100000);
+
+insert into predict
+values("BRK-B",128000,120000,121000,100000);
+
+insert into predict
+values("NVDA",70000,8000,90000,100000);
+
+insert into predict
+values("BA",390000,380000,450000,100000);
+
+insert into predict
+values("COST",128000,120000,121000,100000);
+
+insert into predict
+values("CL",70000,8000,90000,100000);
+
+insert into predict
+values("AMD",390000,380000,450000,100000);
+
+insert into predict
+values("INTC",128000,120000,121000,100000);
+
+insert into predict
+values("IBM",70000,8000,90000,100000);
+
+insert into predict
+values("KHC",390000,380000,450000,100000);
+
+insert into predict
+values("WMT",128000,120000,121000,100000);
+
+insert into predict
+values("COKE",128000,120000,121000,100000);
+
+insert into predict
+values("PEP",128000,120000,121000,100000);
+
 
 # 뉴스 추가
 insert into news
