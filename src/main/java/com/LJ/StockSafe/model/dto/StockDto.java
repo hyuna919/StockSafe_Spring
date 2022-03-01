@@ -6,7 +6,7 @@ public class StockDto {
 	private String stockName;
 	private String stockMarket;
 	private String stockSector;
-	private String stockWics;
+	private String stockIndustry;
 	
 	private long stockMarketcap;
 	private long stockCount;
@@ -16,17 +16,11 @@ public class StockDto {
 	private float stockBps;
 	private float stockDivyield;
 	
-	@Override
-	public String toString() {
-		return "StockDto [id=" + id + ", stockName=" + stockName + ", stockMarket=" + stockMarket + ", stockSector="
-				+ stockSector + ", stockWics=" + stockWics + ", stockMarketcap=" + stockMarketcap + ", stockCount="
-				+ stockCount + ", stockForeigner=" + stockForeigner + ", stockPer=" + stockPer + ", stockPbr="
-				+ stockPbr + ", stockBps=" + stockBps + ", stockDivyield=" + stockDivyield + "]";
-	}
+	
 	public StockDto() {
 		super();
 	}
-	public StockDto(String id, String stockName, String stockMarket, String stockSector, String stockWics,
+	public StockDto(String id, String stockName, String stockMarket, String stockSector, String stockIndustry,
 			long stockMarketcap, long stockCount, float stockForeigner, float stockPer, float stockPbr, float stockBps,
 			float stockDivyield) {
 		super();
@@ -34,7 +28,7 @@ public class StockDto {
 		this.stockName = stockName;
 		this.stockMarket = stockMarket;
 		this.stockSector = stockSector;
-		this.stockWics = stockWics;
+		this.stockIndustry = stockIndustry;
 		this.stockMarketcap = stockMarketcap;
 		this.stockCount = stockCount;
 		this.stockForeigner = stockForeigner;
@@ -67,11 +61,11 @@ public class StockDto {
 	public void setStockSector(String stockSector) {
 		this.stockSector = stockSector;
 	}
-	public String getStockWics() {
-		return stockWics;
+	public String getStockIndustry() {
+		return stockIndustry;
 	}
-	public void setStockWics(String stockWics) {
-		this.stockWics = stockWics;
+	public void setStockIndustry(String stockIndustry) {
+		this.stockIndustry = stockIndustry;
 	}
 	public long getStockMarketcap() {
 		return stockMarketcap;
