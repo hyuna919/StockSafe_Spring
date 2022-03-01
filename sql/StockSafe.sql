@@ -17,8 +17,8 @@ create table stock(
 	id varchar(10),
     stock_name varchar(40) not null,
     stock_market varchar(10) not null,
-    stock_sector varchar(20),
-    stock_industry varchar(20),
+    stock_sector varchar(50),
+    stock_industry varchar(50),
     primary key(id)
 );
 
@@ -97,17 +97,11 @@ values("FB", "페이스북", "NASDAQ", "Communication Services", "Internet Conte
 
 
 insert into stock
-values("AMZN", "아마존", "NASDAQ", "Consumer Cyclical", "Internet Retail");
-
-insert into stock
 values("TSLA", "테슬라", "NASDAQ", "Consumer Cyclical", "Auto Manufacturers");
 
 
 insert into stock
 values("NFLX", "넷플릭스", "NASDAQ", "Communication Services", "Entertainment");
-
-insert into stock
-values("AMZN", "아마존", "NASDAQ", "Consumer Cyclical", "Internet Retail");
 
 insert into stock
 values("BRK-A", "버크셔 해서웨이 A", "NASDAQ", "Financial Services", "Insurance—Diversified");
@@ -169,6 +163,6 @@ values(1, "AAPL","① 삼성과 치킨게임 아닌 윈윈 생태계 구축","20
 insert into news
 values(2, "MSFT","삼성전자, 부산 에코델타시티에 \'스마트홈\' 구축","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004762649&office_id=014&code=005930&sm=title_entity_id.basic");
 insert into news
-values(3, "AMAZ","LG화학, 시총 3위서 8위로 추락…속타는 개미들 언제쯤 웃을까","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004899389&office_id=009&code=051910&sm=title_entity_id.basic");
+values(3, "AMZN","LG화학, 시총 3위서 8위로 추락…속타는 개미들 언제쯤 웃을까","2021.12.27","https://finance.naver.com/item/news_read.naver?article_id=0004899389&office_id=009&code=051910&sm=title_entity_id.basic");
 
 # 댓글
