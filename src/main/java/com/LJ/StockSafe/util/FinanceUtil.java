@@ -15,7 +15,8 @@ import yahoofinance.YahooFinance;
 public class FinanceUtil {
 
     public PriceDto readPrice(String stockId) throws IOException {
-    	Stock stock = YahooFinance.get(stockId + ".KS");
+//    	Stock stock = YahooFinance.get(stockId + ".KS");
+    	Stock stock = YahooFinance.get(stockId);
     	PriceDto priceDto = new PriceDto();
 
 ////    	Stock stock = YahooFinance.get("000660.KS");
@@ -41,12 +42,31 @@ public class FinanceUtil {
     	BigDecimal high = stock.getQuote().getDayHigh();
     	BigDecimal prevClose = stock.getQuote().getPreviousClose();
     	BigDecimal open = stock.getQuote().getOpen();
+    	BigDecimal marketCap = stock.getStats().getMarketCap();
+    	Long sharesOutstanding = stock.getStats().getSharesOutstanding(); //상장주식수
+    	BigDecimal eps = stock.getStats().getEps();  //eps
+    	BigDecimal pe = stock.getStats().getPe();  // PE
+    	BigDecimal bps = stock.getStats().getBookValuePerShare();  //bps
+    	BigDecimal annualYield = stock.getDividend().getAnnualYield(); //배당 수익률
+    	
+    	
+    	System.out.println(stock.getQuote().getVolume()); // 아마 거래량
+
+    	
     	
     	priceDto.setNow(now);
     	priceDto.setLow(low);
     	priceDto.setHigh(high);
     	priceDto.setPrevClose(prevClose);
     	priceDto.setOpen(open);
+    	priceDto.setMarketCap(marketCap);
+    	priceDto.setSharesOutstanding(sharesOutstanding);
+    	priceDto.setEps(eps);
+    	priceDto.setPe(pe);
+    	priceDto.setBps(bps);
+    	priceDto.setAnnualYield(annualYield);
+    	
+    	
     	
         return priceDto;
     }
