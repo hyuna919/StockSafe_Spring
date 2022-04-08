@@ -18,7 +18,7 @@ import com.LJ.StockSafe.model.service.NewsService;
 
 @RestController
 @RequestMapping("/news")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 public class NewsController {
 
 	@Autowired

@@ -19,7 +19,7 @@ import com.LJ.StockSafe.model.service.LikeStockService;
 
 @RestController
 @RequestMapping("/likestock")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 //@Api("Like Stock Controller")
 public class LikeStockController {
 

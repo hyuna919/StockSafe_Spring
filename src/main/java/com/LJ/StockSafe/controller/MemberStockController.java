@@ -18,7 +18,7 @@ import com.LJ.StockSafe.model.service.MemberStockService;
 
 @RestController
 @RequestMapping("/memberstock")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 public class MemberStockController {
 
 	private static final String SUCCESS= "success";

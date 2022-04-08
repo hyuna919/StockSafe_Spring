@@ -22,7 +22,7 @@ import io.swagger.annotations.Api;
 @RestController
 @RequestMapping("/member")
 @Api("Member Controller")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 public class MemberController {
 //	private final Logger
 	private static final String SUCCESS = "success";

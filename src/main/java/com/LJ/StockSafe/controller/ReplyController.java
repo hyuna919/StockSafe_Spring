@@ -19,7 +19,7 @@ import com.LJ.StockSafe.model.service.ReplyService;
 
 @RestController
 @RequestMapping("/reply")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 public class ReplyController {
 	
 	private static final String SUCCESS = "success";

@@ -22,7 +22,7 @@ import com.LJ.StockSafe.util.FinanceUtil;
 
 @RestController
 @RequestMapping("/stock")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*")
 public class StockController {
 
 	@Autowired
