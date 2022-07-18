@@ -2,6 +2,7 @@
 import FinanceDataReader as fdr
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly, plot_components_plotly
+from fbprophet.plot import add_changepoints_to_plot
 
 # 환경변수 받아오기(주식명)
 # 삼성전자 005930
@@ -21,13 +22,27 @@ data['ds'] = data.index
 m = Prophet()
 m.fit(data)
 
+## 기간 설정
+future = m.make_future_dataframe(periods=365)
+## 예측
+forecast = m.predict(future)
 
-## 기간따라 반복
-dates = [1,30,365]
-for date in dates :
-    ## 기간 설정
-    future = m.make_future_dataframe(periods=date)
-    ## 예측
-    forecast = m.predict(future)
+### flexibilty조절
+# m = Prophet(changepoint_prior_scale=0.8)
+# forecast = m.fit(data).predict(future)
 
-# DB에 가격 넣기
+
+# 예측 데이터 시각화
+## 처음 80%의 시계열 데이터에 대하여 잠재적인 25개의 changepoints를 만들고, 그 중 선별하여 최종 changepoints를 그래프에서 vertical line으로 그려주게 됩니다.
+# https://hyperconnect.github.io/2020/03/09/prophet-package.html
+# https://zzsza.github.io/data/2019/02/06/prophet/
+fig = m.plot(forecast)
+
+file_name = STOCK_CODE + ".png"
+graph = m.plot(forecast).savefig(file_name)
+# add_changepoints_to_plot(fig.gca(), m, forecast)
+
+file_name = STOCK_CODE + "_seasonality.png"
+graph_seasonality = m.plot_components(forecast).savefig(file_name)
+
+# 이미지 저장 -> S3
