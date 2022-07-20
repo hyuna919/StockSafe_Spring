@@ -34,10 +34,13 @@ dependencies {
 	// lombok
 	// https://mvnrepository.com/artifact/org.projectlombok/lombok
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
-	
+	annotationProcessor('org.projectlombok:lombok')
+
 	compileOnly group: 'org.springframework', name: 'spring-context-support', version: '5.2.0.RELEASE'
-//Thanks for using https://jar-download.com
-		
+	//Thanks for using https://jar-download.com
+
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-gcp-starter', version: '1.2.5.RELEASE'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-gcp-storage', version: '1.2.5.RELEASE'
 }
 
 test {
