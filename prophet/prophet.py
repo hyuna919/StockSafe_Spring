@@ -1,24 +1,26 @@
 #필요 모듈...?매번 받는건 아닌것같은데
 import FinanceDataReader as fdr
-from fbprophet import Prophet
-from fbprophet.plot import plot_plotly, plot_components_plotly
-from fbprophet.plot import add_changepoints_to_plot
+from prophet import Prophet
+from prophet.plot import plot_plotly, plot_components_plotly
+from prophet.plot import add_changepoints_to_plot
 import pymysql
 
 
 # DB에서 주식코드 받아오기
 ## DB연결
 connect = pymysql.connect(host='localhost', user='ssafy', password='ssafy', db='stocksafe_db', charset='utf8') # 한글처리 (charset = 'utf8')
-cur = con.cursor()
+cur = connect.cursor()
 sql = "select id from stock"
-cur.excute(sql)
+cur.execute(sql)
 list = cur.fetchall()
 
+print(list)
 
 STOCK_CODE = "005930"
 
-for STOCK_CODE in list:
+for stock in list:
     # 데이터 가져오기
+    STOCK_CODE = stock[0]
     data = fdr.DataReader(STOCK_CODE)
 
     # prophet사용 위한 전처리
